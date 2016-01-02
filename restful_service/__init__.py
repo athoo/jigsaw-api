@@ -9,7 +9,6 @@ from flask.ext.cors import CORS
 
 
 MONGO_URL = os.environ.get('MONGO_URL')
-print MONGO_URL
 if not MONGO_URL:
     MONGO_URL = "mongodb://localhost:27017/rest";
 
