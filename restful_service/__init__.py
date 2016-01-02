@@ -5,7 +5,7 @@ from flask.ext.pymongo import PyMongo
 from flask import make_response
 from bson.json_util import dumps
 from flask.ext.cors import CORS
-
+# import flask.ext.login as flask_login
 
 
 MONGO_URL = os.environ.get('MONGO_URL')
@@ -14,6 +14,8 @@ if not MONGO_URL:
 
 #app
 app = Flask(__name__)
+# login_manager = flask_login.LoginManager()
+# login_manager.init_app(app)
 CORS(app)
 
 app.config['MONGO_URI'] = MONGO_URL
@@ -29,6 +31,8 @@ def output_json(obj, code, headers=None):
 
 # to setup the output format
 DEFAULT_REPRESENTATIONS = {'application/json': output_json}
+
+
 
 #api
 api = restful.Api(app)
