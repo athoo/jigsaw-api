@@ -1,3 +1,4 @@
 from restful_service import app
 
-app.run()
+if "__name__"=="__main__":
+    app.run()
