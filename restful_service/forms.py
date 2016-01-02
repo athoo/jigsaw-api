@@ -26,7 +26,8 @@ class FormList(restful.Resource):
         name = form_data['name']
         desc = form_data['description']
         noti = form_data['notification']
-        time = form_data['time']
+        start = form_data['start']
+        end = form_data['end']
         ques = form_data['question_set']
         data = json.dumps(form_data)
 
@@ -61,8 +62,7 @@ class Form(restful.Resource):
 class Root(restful.Resource):
     def get(self):
         return {
-            'status': 'OK',
-            'mongo': str(mongo.db),
+            'status': 'OK'
         }
 
 api.add_resource(Root, '/')
